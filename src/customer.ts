@@ -1,12 +1,10 @@
 export default class Customer{
-    Fname: string;
-    Sname: string;
+    name: string;
     age: number;
     email:string;
     birthDate: Date;
-    constructor(Fname:string,  Sname: string,email:string,birthDate:Date){
-        this.Fname = Fname;
-        this.Sname = Sname;
+    constructor( name:string,email:string,birthDate:Date){
+        this.name = name;
         this.email = email;
         this.birthDate =birthDate;
         this.age = new Date().getUTCFullYear() - birthDate.getFullYear();
@@ -15,9 +13,9 @@ export default class Customer{
         return this.age >=18;
     }
      getFistName(){
-        return this.Fname.split(" ")[0];
+        return this.name.split(" ")[0];
     }
-     getSecondName(){
-        return this.Sname.split(" ")[0];
+     getLastName(){
+        return this.name.split(" ")[1];
     }
 }
